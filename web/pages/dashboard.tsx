@@ -1,4 +1,6 @@
 import {
+  Alert,
+  AlertIcon,
   Box,
   Tab,
   TabList,
@@ -52,6 +54,11 @@ const DashboardTabView = () => {
   const [tabIndex, setTabIndex] = useState(0)
   return (
     <Box maxW='7xl' mx={'auto'} pt={5} px={{ base: 2, sm: 12, md: 17 }}>
+      <Alert status='error'>
+        <AlertIcon />
+        Urgent Notice: Due to recent changes to Google's FCM platform, your token may be out of sync with textbee server and text messages may not be delivered properly. To resolve this issue, please open the textbee mobile app and click the Update button found right below the api key input. and this will update your token.
+      </Alert>
+      
       <Tabs isLazy={false} index={tabIndex} onChange={setTabIndex}>
         <TabList>
           <Tab>API Key and Devices</Tab>
